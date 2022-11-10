@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+{% load static %}
+  <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <title>Admin Home Page    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+    <link rel="stylesheet" href="{% static 'ecomapp/css/main.css' %}" />
+     <link href="ecomapp/css/style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+      <header id="header">
+       <div class="logo pull-left"><img src="{% static 'phonewerk.png' %}"></div>
+      <div class="header-content">
+      <div class="header-date pull-left">
+      <div> <strong> {{ mytime }} </strong> </div>  
+        <!-- <div class="small">
+          {% now "jS F Y H:i" %}
+      </div> -->
+      </div>
+      <div class="pull-right clearfix">
+        <ul class="info-menu list-inline list-unstyled">
+          <li class="profile">
+            <a href="#" data-toggle="dropdown" class="toggle" aria-expanded="false">
+              <img src="{% static 'profile.png' %}" alt="user-image" class="img-circle img-inline">
+              <span>Admin <i class="caret"></i></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li> 
+                  <a href="profile.php?id=1">
+                      <i class="glyphicon glyphicon-user"></i>
+                      
+                      Profile
+                  </a>
+              </li>
+             <li>
+                 <a href="edit_account.php" title="edit account">
+                     <i class="glyphicon glyphicon-cog"></i>
+                     Settings
+                 </a>
+             </li>
+             <li class="last">
+                 <a href="logout.php">
+                     <i class="glyphicon glyphicon-off"></i>
+                     Logout
+                 </a>
+             </li>
+           </ul>
+          </li>
+        </ul>
+      </div>
+     </div>
+    </header>    
+<!-- admin menu -->
+
+
+<!-- Sidebar Navigation start here -->
+    <div class="sidebar">
+      <ul>
+          <li>
+            <!-- Dashboard module -->
+            
+                <a href="/dashboard" class="submenu-toggle">
+                  <i class="glyphicon glyphicon-home"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+
+            <!-- Customer Management module -->
+                <a href="#custdrop" class="submenu-toggle" data-toggle="collapse" aria-expanded="true" aria-controls="footwear">
+                    <i class="glyphicon glyphicon-user"></i>
+                    <span>Customer Management</span>
+                </a>
+                <div class="collapse" id="custdrop">
+                  <ul class="nav submenu" style="display: block;">
+                    <li><a href="/customer">Customer Roles</a> </li>
+                    <li><a href="/managecustomer">Manage Customers</a> </li>
+                  </ul>
+                </div>
+              
+            <!-- Products module -->
+            <a href="#productdrop" class="submenu-toggle" data-toggle="collapse" aria-expanded="true" aria-controls="footwear">
+              <i class="glyphicon glyphicon-th-large"></i>
+              <span>Products</span>
+            </a>
+            <div class="collapse" id="productdrop">
+            <ul class="nav submenu" style="display: block;">
+              <li><a href="/manageproduct">Manage Products</a> </li>
+              <li><a href="/addproduct">Add Product</a> </li>
+              <li><a href="/categories">Categories</a> </li>
+              <li><a href="/subcategory">Subcategory</a> </li>
+            </ul>
+            </div>  
+
+            <!-- Images module -->
+              <a href="/images" >
+                <i class="glyphicon glyphicon-picture"></i>
+                <span>Images</span>
+              </a>
+
+            <!-- Invoices module -->
+            <a href="#invoicedrop" class="submenu-toggle" data-toggle="collapse" aria-expanded="true" aria-controls="footwear">
+              <i class="glyphicon glyphicon-th-large"></i>
+              <span>Invoices</span>
+            </a>
+            <div class="collapse" id="invoicedrop">
+            <ul class="nav submenu" style="display: block;">
+              <li><a href="/createinvoice">Create Invoice</a> </li>
+              <li><a href="/invoicelist">Invoice List</a> </li>
+            </ul>
+            </div>
+
+            <!-- Email module -->
+            <a href="#emaildrop" class="submenu-toggle" data-toggle="collapse" aria-expanded="true" aria-controls="footwear">
+              <i class="glyphicon glyphicon-th-list"></i>
+              <span>Email</span>
+            </a>
+            <div class="collapse" id="emaildrop">
+            <ul class="nav submenu" style="display: block;">
+              <li><a href="/sendemail">Send Email</a> </li>
+              <li><a href="/emaillist">Email List</a> </li>
+            </ul>
+            </div>
+
+            <!-- Offer module -->
+            <a href="#offerdrop" class="submenu-toggle" data-toggle="collapse" aria-expanded="true" aria-controls="footwear">
+              <i class="glyphicon glyphicon-th-list"></i>
+              <span>Offer</span>
+            </a>
+            <div class="collapse" id="offerdrop">
+            <ul class="nav submenu" style="display: block;">
+              <li><a href="/createnewoffer">Create New Offer</a> </li>
+              <li><a href="/offerlist">Offer List</a> </li>
+            </ul>
+            </div>
+
+            <!-- Company- Overview module -->
+            <a href="#companydrop" class="submenu-toggle" data-toggle="collapse" aria-expanded="true" aria-controls="footwear">
+              <i class="glyphicon glyphicon-th-list"></i>
+              <span>Company-Overview</span>
+            </a>
+            <div class="collapse" id="companydrop">
+            <ul class="nav submenu" style="display: block;">
+              <li><a href="/companylist">Company-List</a> </li>
+              <li><a href="/companyregistration">Company Registration</a> </li>
+            </ul>
+            </div>
+
+            <!-- Office Expense module -->
+            <a href="#officeexpensedrop" class="submenu-toggle" data-toggle="collapse" aria-expanded="true" aria-controls="footwear">
+              <i class="glyphicon glyphicon-th-list"></i>
+              <span>Office Expense</span>
+            </a>
+            <div class="collapse" id="officeexpensedrop">
+            <ul class="nav submenu" style="display: block;">
+              <li><a href="/bill">Bill</a> </li>
+              <li><a href="/employeeoverview">Employee-Overview</a> </li>
+            </ul>
+            </div>
+
+            <!-- Purchase Overview module -->
+            <a href="#purchaseoverviewdrop" class="submenu-toggle" data-toggle="collapse" aria-expanded="true" aria-controls="footwear">
+              <i class="glyphicon glyphicon-th-list"></i>
+              <span>Purchase-Overview</span>
+            </a>
+            <div class="collapse" id="purchaseoverviewdrop">
+            <ul class="nav submenu" style="display: block;">
+              <li><a href="/createpurchaseorder">Create Purchase Order</a> </li>
+              <li><a href="/purchaselist">Purchase-List</a> </li>
+            </ul>
+            </div>
+
+            <!-- Repair Overview module -->
+            <a href="#repairoverviewdrop" class="submenu-toggle" data-toggle="collapse" aria-expanded="true" aria-controls="footwear">
+              <i class="glyphicon glyphicon-th-list"></i>
+              <span>Repair-Overview</span>
+            </a>
+            <div class="collapse" id="repairoverviewdrop">
+            <ul class="nav submenu" style="display: block;">
+              <li><a href="/createrepairorder">Create Repair Order</a> </li>
+              <li><a href="/repairlist">Repair-List</a> </li>
+            </ul>
+            </div>
+
+            <!-- Cash Sale module -->
+            <a href="#cashsaledrop" class="submenu-toggle" data-toggle="collapse" aria-expanded="true" aria-controls="footwear">
+              <i class="glyphicon glyphicon-th-list"></i>
+              <span>Cash-Sale</span>
+            </a>
+            <div class="collapse" id="cashsaledrop">
+            <ul class="nav submenu" style="display: block;">
+              <li><a href="/salelist">Sale_List</a> </li>
+              <li><a href="/makesale">Make Sale</a> </li>
+            </ul>
+            </div>
+
+            <!-- Sales module -->
+            <a href="#sales" class="submenu-toggle" data-toggle="collapse" aria-expanded="true" aria-controls="footwear">
+              <i class="glyphicon glyphicon-th-list"></i>
+              <span>Sales</span>
+            </a>
+            <div class="collapse" id="sales">
+            <ul class="nav submenu" style="display: block;">
+              <li><a href="/managesales">Manage Sales</a> </li>
+              <li><a href="/addsale">Add Sale</a> </li>
+            </ul>
+            </div>
+
+            <!-- Sales Report Module-->
+            <a href="#salesreport" class="submenu-toggle" data-toggle="collapse" aria-expanded="true" aria-controls="footwear">
+              <i class="glyphicon glyphicon-signal"></i>
+              <span>Sales Report</span>
+            </a>
+            <div class="collapse" id="salesreport">
+            <ul class="nav submenu" style="display: block;">
+              <li><a href="/salesbydates">Sales by dates</a> </li>
+              <li><a href="/monthlysales">Monthly sales</a> </li>
+              <li><a href="/dailysales">Daily sales</a> </li>
+            </ul>
+            </div>
+
+        </li>
+   </div>
+
+<!-- Block content start here -->
+{% block content %}
+
+{% endblock content %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+  <script type="text/javascript" src="{% static 'ecomapp/js/function.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,264 @@
+{% extends 'ecomapp/base.html' %}
+{% load static %}
+{% block content %}
+<div class="page">
+    <div class="container-fluid">
+  <div class="row">
+     <div class="col-md-6">
+          </div>
+  </div>
+   <div class="row">
+     <div class="col-md-12">
+        <div class="panel">
+          <div class="jumbotron text-center">
+             <h3>Phone Work Management System</h3>
+          </div>
+        </div>
+     </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+         <div class="panel panel-box clearfix">
+           <div class="panel-icon pull-left bg-green">
+            <i class="glyphicon glyphicon-user"></i>
+          </div>
+          <div class="panel-value pull-right">
+            <h2 class="margin-top"> {{ custno }} </h2>
+            <p class="text-muted">customers</p>
+          </div>
+         </div>
+      </div>
+      <div class="col-md-3">
+         <div class="panel panel-box clearfix">
+           <div class="panel-icon pull-left bg-red">
+            <i class="glyphicon glyphicon-list"></i>
+          </div>
+          <div class="panel-value pull-right">
+            <h2 class="margin-top"> 8 </h2>
+            <p class="text-muted">Categories</p>
+          </div>
+         </div>
+      </div>
+      <div class="col-md-3">
+         <div class="panel panel-box clearfix">
+           <div class="panel-icon pull-left bg-blue">
+            <i class="glyphicon glyphicon-shopping-cart"></i>
+          </div>
+          <div class="panel-value pull-right">
+            <h2 class="margin-top"> 7 </h2>
+            <p class="text-muted">Products</p>
+          </div>
+         </div>
+      </div>
+      <div class="col-md-3">
+         <div class="panel panel-box clearfix">
+           <div class="panel-icon pull-left bg-yellow">
+            <i class="glyphicon glyphicon-usd"></i>
+          </div>
+          <div class="panel-value pull-right">
+            <h2 class="margin-top"> 0</h2>
+            <p class="text-muted">Sales</p>
+          </div>
+         </div>
+      </div>
+  </div>
+    <!-- For Limites Stock -->
+    <div class="row">
+       <div class="col-md-4">
+       <div class="panel panel-danger">
+         <div class="panel-heading">
+           <strong>
+             <span class="glyphicon glyphicon-th"></span>
+             <span class="blinking">Stock is Running Low In Quantity</span>
+           </strong>
+         </div>
+         <div class="panel-body">
+           <table class="table table-striped table-bordered table-condensed">
+            <thead>
+             <tr>
+               <th>Title</th>
+               <th>Quantity Left</th>
+             <tr>
+            </thead>
+            <tbody>
+                        <tbody>
+           </table>
+         </div>
+       </div>
+     </div>
+      <div class="col-md-4">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <strong>
+              <span class="glyphicon glyphicon-th"></span>
+              <span>Unpaid Bills For Purchase</span>
+            </strong>
+          </div>
+          <div class="panel-body">
+            <table class="table table-striped table-bordered table-condensed">
+         <thead>
+           <tr>
+             <th>Customer Name</th>
+             <th>Mode</th>
+             <th>Date Of Purchase</th>
+           </tr>
+         </thead>
+         <tbody>
+                    <tr>
+             <td>Ankit</td>
+             <td>Unpaid</td>
+             <td>3 March, 2020</td>
+          </tr>
+  
+                </tbody>
+       </table>
+      </div>
+     </div>
+    </div>
+  
+     <div class="col-md-4">
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <strong>
+              <span class="glyphicon glyphicon-th"></span>
+              <span>Unpaid Bills For Repair</span>
+            </strong>
+          </div>
+          <div class="panel-body">
+            <table class="table table-striped table-bordered table-condensed">
+         <thead>
+           <tr>
+             <th>Customer Name</th>
+             <th>Mode</th>
+             <th>Date Of Repair</th>
+           </tr>
+         </thead>
+         <tbody>
+                    <tr>
+             <td>Akash</td>
+             <td>Unpaid</td>
+             <td>2 April, 2020</td>
+          </tr>
+  
+                </tbody>
+       </table>
+      </div>
+     </div>
+    </div>
+    </div>
+  
+    <div class="row">
+     <div class="col-md-4">
+       <div class="panel panel-default">
+         <div class="panel-heading">
+           <strong>
+             <span class="glyphicon glyphicon-th"></span>
+             <span>Highest Saleing Products</span>
+           </strong>
+         </div>
+         <div class="panel-body">
+           <table class="table table-striped table-bordered table-condensed">
+            <thead>
+             <tr>
+               <th>Title</th>
+               <th>Total Sold</th>
+               <th>Total Quantity</th>
+             <tr>
+            </thead>
+            <tbody>
+                        <tbody>
+           </table>
+         </div>
+       </div>
+     </div>
+     <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <strong>
+              <span class="glyphicon glyphicon-th"></span>
+              <span>LATEST SALES</span>
+            </strong>
+          </div>
+          <div class="panel-body">
+            <table class="table table-striped table-bordered table-condensed">
+         <thead>
+           <tr>
+             <th class="text-center" style="width: 50px;">#</th>
+             <th>Product Name</th>
+             <th>Date</th>
+             <th>Total Sale</th>
+           </tr>
+         </thead>
+         <tbody>
+                  </tbody>
+       </table>
+      </div>
+     </div>
+    </div>
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <strong>
+            <span class="glyphicon glyphicon-th"></span>
+            <span>Recently Added Products</span>
+          </strong>
+        </div>
+        <div class="panel-body">
+  
+          <div class="list-group">
+                    <a class="list-group-item clearfix" href="edit_product.php?id=58">
+                  <h4 class="list-group-item-heading">
+                                       <img class="img-avatar img-circle" src="{% static 'redmi-9a.jpg' %}" alt="">
+                                    Redmi 9A                  <span class="label label-warning pull-right">
+                   $12000                  </span>
+                  </h4>
+                  <span class="list-group-item-text pull-right">
+                  A70              </span>
+            </a>
+                    <a class="list-group-item clearfix" href="edit_product.php?id=57">
+                  <h4 class="list-group-item-heading">
+                                     <img class="img-avatar img-circle" src="{% static 'redmi-k20.jpg' %}" alt="" />
+                                  Redmi K20                  <span class="label label-warning pull-right">
+                   $14500                  </span>
+                  </h4>
+                  <span class="list-group-item-text pull-right">
+                  Redmi              </span>
+            </a>
+                    <a class="list-group-item clearfix" href="edit_product.php?id=56">
+                  <h4 class="list-group-item-heading">
+                                     <img class="img-avatar img-circle" src="{% static 'realme.jpg' %}" alt="" />
+                                  Realme                   <span class="label label-warning pull-right">
+                   $500                  </span>
+                  </h4>
+                  <span class="list-group-item-text pull-right">
+                  Realme              </span>
+            </a>
+                    <a class="list-group-item clearfix" href="edit_product.php?id=55">
+                  <h4 class="list-group-item-heading">
+                                       <img class="img-avatar img-circle" src="{% static 'iphone-7.jpg' %}" alt="">
+                                    IPhone 7 Lcd Display                   <span class="label label-warning pull-right">
+                   $18                  </span>
+                  </h4>
+                  <span class="list-group-item-text pull-right">
+                  Apple iPhone              </span>
+            </a>
+                    <a class="list-group-item clearfix" href="edit_product.php?id=54">
+                  <h4 class="list-group-item-heading">
+                                       <img class="img-avatar img-circle" src="{% static 'iphone-6.jpg' %}" alt="">
+                                    IPhone 6G LCD Display White                  <span class="label label-warning pull-right">
+                   $14                  </span>
+                  </h4>
+                  <span class="list-group-item-text pull-right">
+                  Apple iPhone              </span>
+            </a>
+            </div>
+    </div>
+   </div>
+  </div>
+   </div>
+   
+  
+  
+       </div>
+      </div>
+{% endblock content %}

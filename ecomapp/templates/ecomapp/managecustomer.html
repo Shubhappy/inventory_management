@@ -1,0 +1,55 @@
+{% extends 'ecomapp/base.html' %}
+{% load static %}
+{% block content %}
+<div class="page" style="width: 1400px">
+  <div class="container-fluid" style="width: 1250px">
+    <div class="row">
+      <div class="col-sm-2">
+        <h4 class="text-center alert alert-info">Add New Role</h4>
+        <form action="" method="POST">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input type="submit" class="btn btn-success col-sm-12" value="Add">
+        </form>
+      </div>
+      <div class="col-sm-8"> 
+        <h4 class="text-center alert alert-info">Types of Customer</h4>
+        {% if cus %} 
+          
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Sr. No.</th>  
+              <th scope="col">Group_Name</th>
+              <th scope="col">Group Level</th>
+              <th scope="col">Status</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for cu in cus %}
+              <tr>
+                <th scope="row">{{cu.id}}</th>
+                <td>{{cu.Group_Name}}</td>
+                <td>{{cu.Group_Level}}</td>
+                <td> 
+                  <span class="label label-success"> {{cu.Status}} </span>
+                </td>
+                <td class="d-flex">
+                  <a href="{% url 'updatedata' cu.id %}" class="btn btn-warning btn-sm">Edit</a>
+                  <form action="{% url 'deletedata' cu.id %}" method="POST">
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+                  </form>
+                </td>
+              </tr>
+            {% endfor %}            
+          </tbody>
+        </table>
+
+        {%endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
